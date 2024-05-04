@@ -1,0 +1,89 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>User Listing</title>
+        <style>
+            /* CSS for User Listing */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.card {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    width: calc(33.33% - 40px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card h2 {
+    margin-top: 0;
+    color: #333;
+    font-size: 1.5rem;
+}
+
+.card p {
+    margin: 0.5rem 0;
+    color: #666;
+}
+
+.card a {
+    text-decoration: none;
+    color: #4caf50;
+    font-weight: bold;
+}
+
+.card a:hover {
+    text-decoration: underline;
+}
+
+        </style>
+    </head>
+    <body>
+        <h1>User Listing</h1>
+        <div id="userList">
+            {{#each users}}
+                <div class="card" id="{{this.DriveId}}">
+                    <h2>{{this.HostName}}</h2>
+                    <p>Wallet Address: {{this.WalletAddress}}</p>
+                    <p>No. of Volunteers: {{this.NoOfVolunteers}}</p>
+                    <p>Event Date: {{this.EventDate}}</p>
+                    <p>Description: {{this.Description}}</p>
+                    <p>Address: {{this.Address}}</p>
+                    <p>DriveId:{{this.DriveId}}</p>
+                    <a  href="/volunteer1" >add</a>
+                </div>
+                </a>
+            {{/each}}
+        </div>
+        
+        
+
+    </body>
+    </html>
